@@ -15,6 +15,7 @@ const Experiences = () => {
   const [experienceData, setExperienceData] = useState([]);
 
   useEffect(() => {
+    if(experienceData.length === 0){
     axios.get( 'https://cdn.contentful.com/spaces/qgy02z519tkz/environments/master/entries/7bCU0Qw2zVMJ8xpKGGTeEn?access_token=hEDisbPkmS_yFjud0OkToNEpTKLuqgyE3WnBuABcbh4')
     .then( response => { 
       setExperienceData(response.data.fields.exp);          
@@ -22,6 +23,7 @@ const Experiences = () => {
     .catch( error => {
         console.log(error);
     } );
+  }
   }, []);
 
 
