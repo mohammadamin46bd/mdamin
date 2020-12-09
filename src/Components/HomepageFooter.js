@@ -36,7 +36,7 @@ const homepageFooter = () => (
             <Header as="h4" inverted>
               Page with
             </Header>
-            <p>React and Sementic UI</p>
+            <p>React, Sementic UI React and Contentful</p>
           </Grid.Column>
         </Grid.Row>
       </Grid>
