@@ -6,7 +6,7 @@ const homepageHeading = ({ mobile }) => (
   <Container textAlign="justified">
     <Header
       as="h1"
-      content="Mohammad Amin"
+      content="Mohammad Amin Uzzal"
       inverted
       style={{
         fontSize: mobile ? "1,5em" : "2em",
