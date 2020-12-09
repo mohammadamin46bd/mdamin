@@ -15,7 +15,6 @@ const fullstackWork = () => (
         marginTop: "1.5em",
       }}
     />
-
     <p>Some previous fullstack work experience will be added here.</p>
   </Container>
 );

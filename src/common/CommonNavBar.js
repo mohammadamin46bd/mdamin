@@ -1,66 +1,68 @@
-import PropTypes from 'prop-types'
-import React, { Component } from 'react'
+import PropTypes from "prop-types";
+import React, { Component } from "react";
 import {
   Button,
   Container,
   Menu,
   Segment,
   Visibility,
-} from 'semantic-ui-react';
-import { NavLink } from 'react-router-dom';
-import { Media } from '../common/MediaForResponsive';
+} from "semantic-ui-react";
+import { NavLink } from "react-router-dom";
+import { Media } from "../common/MediaForResponsive";
 
-
-
-
-
-/* Heads up!
- * Neither Semantic UI nor Semantic UI React offer a responsive navbar, however, it can be implemented easily.
- * It can be more complicated, but you can create really flexible markup.
- */
 class CommonNavBar extends Component {
-  state = {}
+  state = {};
 
-  hideFixedMenu = () => { return this.setState({ fixed: true });}
-  showFixedMenu = () => { return this.setState({ fixed: true });}
-  
-  componentWillUnmount(){
-    this.setState({ sidebarOpened: false })
- }
+  hideFixedMenu = () => {
+    return this.setState({ fixed: true });
+  };
+  showFixedMenu = () => {
+    return this.setState({ fixed: true });
+  };
 
+  componentWillUnmount() {
+    this.setState({ sidebarOpened: false });
+  }
 
   render() {
-    const { children } = this.props
-    const { fixed } = this.state
+    const { children } = this.props;
+    const { fixed } = this.state;
 
     return (
-      <Media greaterThan='mobile'>
+      <Media greaterThan="mobile">
         <Visibility
           once={false}
           onBottomPassed={this.showFixedMenu}
           onBottomPassedReverse={this.hideFixedMenu}
         >
           <Segment
-            
-            textAlign='center'
-            style={{ minHeight: 150, padding: '1em 0em' }}
+            textAlign="center"
+            style={{ minHeight: 150, padding: "1em 0em" }}
             vertical
           >
             <Menu
-              fixed={fixed ? 'top' : null}
-            
+              fixed={fixed ? "top" : null}
               pointing={!fixed}
               secondary={!fixed}
-              size='large'
-              
+              size="large"
             >
               <Container>
-                <Menu.Item name='home' as={NavLink} exact to='/' >Home</Menu.Item>
-                <Menu.Item name='workgallary' as={NavLink} to='/workgallary'>Work gallery</Menu.Item>
-                <Menu.Item name='frontend' as={NavLink} to='/frontend'>Frontend</Menu.Item>
-                <Menu.Item name='backend' as={NavLink} to='/backend'>Backend</Menu.Item>
-                <Menu.Item name='fullstack' as={NavLink} to='/fullstack'>Fullstack</Menu.Item>
-  {/*               <Menu.Item position='right'>
+                <Menu.Item name="home" as={NavLink} exact to="/">
+                  Home
+                </Menu.Item>
+                <Menu.Item name="workgallary" as={NavLink} to="/workgallary">
+                  Work gallery
+                </Menu.Item>
+                <Menu.Item name="frontend" as={NavLink} to="/frontend">
+                  Frontend
+                </Menu.Item>
+                <Menu.Item name="backend" as={NavLink} to="/backend">
+                  Backend
+                </Menu.Item>
+                <Menu.Item name="fullstack" as={NavLink} to="/fullstack">
+                  Fullstack
+                </Menu.Item>
+                {/*               <Menu.Item position='right'>
                   <Button as='a' >
                     Log in
                   </Button>
@@ -70,18 +72,17 @@ class CommonNavBar extends Component {
                 </Menu.Item> */}
               </Container>
             </Menu>
-          
           </Segment>
         </Visibility>
 
         {children}
       </Media>
-    )
+    );
   }
 }
 
 CommonNavBar.propTypes = {
   children: PropTypes.node,
-}
+};
 
-export default CommonNavBar
+export default CommonNavBar;
