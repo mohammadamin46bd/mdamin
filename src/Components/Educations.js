@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Grid, Header, Segment, Container, Item } from "semantic-ui-react";
-import { educationData } from "../data/EducationData";
+import axios from 'axios';
 
-const educations = () => (
+const Educations = () => {
+  
+  const [educationData, setEducationData] = useState([]);
+
+  useEffect(() => {
+    axios.get( 'https://cdn.contentful.com/spaces/qgy02z519tkz/environments/master/entries/3J6GAx29Z5mfjyknmwPJ8u?access_token=hEDisbPkmS_yFjud0OkToNEpTKLuqgyE3WnBuABcbh4')
+    .then( response => { 
+      setEducationData(response.data.fields.edu);          
+    } )
+    .catch( error => {
+        console.log(error);
+    } );
+  }, []);
+
+return (
   <Segment style={{ padding: "4em 0em" }} vertical>
     <Container>
       <Grid container stackable textAlign="left">
@@ -13,7 +27,7 @@ const educations = () => (
         </Grid.Row>
         <Grid.Row>
           <Item.Group>
-            {educationData.edu.map((eduItem, index) => (
+            {educationData.map((eduItem, index) => (
               <Item key={index}>
                 <Item.Content>
                   <Item.Header as="a">{eduItem.school}</Item.Header>
@@ -29,4 +43,7 @@ const educations = () => (
   </Segment>
 );
 
-export default educations;
+
+}
+
+export default Educations;

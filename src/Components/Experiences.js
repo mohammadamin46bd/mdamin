@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Grid,
   Segment,
@@ -7,10 +7,24 @@ import {
   List,
   Header,
 } from "semantic-ui-react";
+import axios from 'axios';
 
-import { experienceData } from "../data/ExperienceData";
 
-const experiences = () => {
+const Experiences = () => {
+
+  const [experienceData, setExperienceData] = useState([]);
+
+  useEffect(() => {
+    axios.get( 'https://cdn.contentful.com/spaces/qgy02z519tkz/environments/master/entries/7bCU0Qw2zVMJ8xpKGGTeEn?access_token=hEDisbPkmS_yFjud0OkToNEpTKLuqgyE3WnBuABcbh4')
+    .then( response => { 
+      setExperienceData(response.data.fields.exp);          
+    } )
+    .catch( error => {
+        console.log(error);
+    } );
+  }, []);
+
+
   return (
     <Segment style={{ padding: "4em 0em" }} vertical>
       <Container>
@@ -22,7 +36,7 @@ const experiences = () => {
           </Grid.Row>
           <Grid.Row>
             <Item.Group>
-              {experienceData.exp.map((itemKey, index) => {
+              {experienceData.map((itemKey, index) => {
                 return (
                   <Item key={"exp_" + index}>
                     <Item.Content>
@@ -98,4 +112,4 @@ const experiences = () => {
   );
 };
 
-export default experiences;
+export default Experiences;
