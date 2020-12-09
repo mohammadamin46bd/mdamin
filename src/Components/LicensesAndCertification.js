@@ -9,7 +9,6 @@ const LicensesAndCertification = () => {
   const [licensesAndCertificationData, setLicensesAndCertificationData] = useState([]);
 
   useEffect(() => {
-    if(licensesAndCertificationData.length === 0){
     axios.get( 'https://cdn.contentful.com/spaces/qgy02z519tkz/environments/master/entries/1AYgjpoMDOUBGvatKXqb5D?access_token=hEDisbPkmS_yFjud0OkToNEpTKLuqgyE3WnBuABcbh4')
     .then( response => { 
       setLicensesAndCertificationData(response.data.fields.lc);          
@@ -17,7 +16,6 @@ const LicensesAndCertification = () => {
     .catch( error => {
         console.log(error);
     } );
-  }
   }, []);
 
   return (
