@@ -15,13 +15,22 @@ const Experiences = () => {
   const [experienceData, setExperienceData] = useState([]);
 
   useEffect(() => {
-    axios.get( 'https://cdn.contentful.com/spaces/qgy02z519tkz/environments/master/entries/7bCU0Qw2zVMJ8xpKGGTeEn?access_token=hEDisbPkmS_yFjud0OkToNEpTKLuqgyE3WnBuABcbh4')
-    .then( response => { 
-      setExperienceData(response.data.fields.exp);          
-    } )
-    .catch( error => {
-        console.log(error);
-    } );
+    let expData = JSON.parse(localStorage.getItem("exp")) || [];
+    if(expData.length === 0){
+      axios.get( 'https://cdn.contentful.com/spaces/qgy02z519tkz/environments/master/entries/7bCU0Qw2zVMJ8xpKGGTeEn?access_token=hEDisbPkmS_yFjud0OkToNEpTKLuqgyE3WnBuABcbh4')
+      .then( response => { 
+        setExperienceData(response.data.fields.exp);
+        localStorage.setItem("exp",JSON.stringify(response.data.fields.exp));                   
+      } )
+      .catch( error => {
+          console.log(error);
+      } );
+
+    }else{
+      setExperienceData(expData);
+    }
+
+
   }, []);
 
 

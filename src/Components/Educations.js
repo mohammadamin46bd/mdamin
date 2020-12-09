@@ -7,13 +7,20 @@ const Educations = () => {
   const [educationData, setEducationData] = useState([]);
 
   useEffect(() => {
-    axios.get( 'https://cdn.contentful.com/spaces/qgy02z519tkz/environments/master/entries/3J6GAx29Z5mfjyknmwPJ8u?access_token=hEDisbPkmS_yFjud0OkToNEpTKLuqgyE3WnBuABcbh4')
-    .then( response => { 
-      setEducationData(response.data.fields.edu);          
-    } )
-    .catch( error => {
-        console.log(error);
-    } );
+    let eduData = JSON.parse(localStorage.getItem("edu")) || [];
+    if(eduData.length === 0){
+      axios.get( 'https://cdn.contentful.com/spaces/qgy02z519tkz/environments/master/entries/3J6GAx29Z5mfjyknmwPJ8u?access_token=hEDisbPkmS_yFjud0OkToNEpTKLuqgyE3WnBuABcbh4')
+      .then( response => { 
+        setEducationData(response.data.fields.edu);
+        localStorage.setItem("edu",JSON.stringify(response.data.fields.edu));          
+      } )
+      .catch( error => {
+          console.log(error);
+      } );
+    }else{
+      setEducationData(eduData);
+    }
+
   }, []);
 
 return (

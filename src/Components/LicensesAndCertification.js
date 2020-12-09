@@ -9,13 +9,22 @@ const LicensesAndCertification = () => {
   const [licensesAndCertificationData, setLicensesAndCertificationData] = useState([]);
 
   useEffect(() => {
-    axios.get( 'https://cdn.contentful.com/spaces/qgy02z519tkz/environments/master/entries/1AYgjpoMDOUBGvatKXqb5D?access_token=hEDisbPkmS_yFjud0OkToNEpTKLuqgyE3WnBuABcbh4')
-    .then( response => { 
-      setLicensesAndCertificationData(response.data.fields.lc);          
-    } )
-    .catch( error => {
-        console.log(error);
-    } );
+    let lcData = JSON.parse(localStorage.getItem("lc")) || [];
+    if(lcData.length === 0){
+      axios.get( 'https://cdn.contentful.com/spaces/qgy02z519tkz/environments/master/entries/1AYgjpoMDOUBGvatKXqb5D?access_token=hEDisbPkmS_yFjud0OkToNEpTKLuqgyE3WnBuABcbh4')
+      .then( response => { 
+        setLicensesAndCertificationData(response.data.fields.lc);
+        localStorage.setItem("lc",JSON.stringify(response.data.fields.lc));           
+      } )
+      .catch( error => {
+          console.log(error);
+      } );
+
+    }else{
+      setLicensesAndCertificationData(lcData);
+    }
+
+
   }, []);
 
   return (
