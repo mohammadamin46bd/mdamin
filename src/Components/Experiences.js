@@ -1,0 +1,101 @@
+import React from "react";
+import {
+  Grid,
+  Segment,
+  Item,
+  Container,
+  List,
+  Header,
+} from "semantic-ui-react";
+
+import { experienceData } from "../data/ExperienceData";
+
+const experiences = () => {
+  return (
+    <Segment style={{ padding: "4em 0em" }} vertical>
+      <Container>
+        <Grid container stackable textAlign="left">
+          <Grid.Row>
+            <Header as="h1" floated="left">
+              Experience
+            </Header>
+          </Grid.Row>
+          <Grid.Row>
+            <Item.Group>
+              {experienceData.exp.map((itemKey, index) => {
+                return (
+                  <Item key={"exp_" + index}>
+                    <Item.Content>
+                      <Item.Header as="a">{itemKey.title}</Item.Header>
+                      <Item.Meta>
+                        {itemKey.company} . {itemKey.employment_type}
+                      </Item.Meta>
+                      <Item.Meta>
+                        {itemKey.start_date} - {itemKey.end_date}
+                      </Item.Meta>
+                      <Item.Meta>{itemKey.location}</Item.Meta>
+                      {itemKey.description.map((textItem, inddesc) => {
+                        return Object.keys(textItem).map((tkey) => {
+                          let elementToReturn = null;
+                          if (tkey === "p") {
+                            elementToReturn = (
+                              <Item.Description
+                                key={"p_" + index + "_" + inddesc}
+                              >
+                                {textItem[tkey]}
+                              </Item.Description>
+                            );
+                          } else if (tkey === "bp") {
+                            elementToReturn = (
+                              <Item.Description
+                                key={"bp_" + index + "_" + inddesc}
+                              >
+                                <Header as="h5">{textItem[tkey]}</Header>
+                              </Item.Description>
+                            );
+                          } else if (tkey === "l") {
+                            let listItemElement = textItem[tkey].map(
+                              (listItem, indL) => (
+                                <List.Item
+                                  key={
+                                    "descIt_" +
+                                    index +
+                                    "_" +
+                                    inddesc +
+                                    "_" +
+                                    indL
+                                  }
+                                  as="li"
+                                >
+                                  {listItem}
+                                </List.Item>
+                              )
+                            );
+
+                            elementToReturn = (
+                              <Item.Description
+                                key={"desc_" + index + "_" + inddesc}
+                              >
+                                <List as="ul">{listItemElement}</List>
+                              </Item.Description>
+                            );
+                          } else {
+                            console.log("not handled");
+                            console.log(tkey);
+                          }
+                          return elementToReturn;
+                        });
+                      })}
+                    </Item.Content>
+                  </Item>
+                );
+              })}
+            </Item.Group>
+          </Grid.Row>
+        </Grid>
+      </Container>
+    </Segment>
+  );
+};
+
+export default experiences;
