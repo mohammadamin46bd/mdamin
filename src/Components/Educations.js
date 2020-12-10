@@ -29,7 +29,7 @@ return (
       <Grid container stackable textAlign="left">
         <Grid.Row>
           <Header as="h1" floated="left">
-            Experience
+            Utbildning
           </Header>
         </Grid.Row>
         <Grid.Row>
