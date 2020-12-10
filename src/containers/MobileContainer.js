@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import { Container, Icon, Menu, Segment, Sidebar } from "semantic-ui-react";
 import { NavLink } from "react-router-dom";
 import { Media } from "../common/MediaForResponsive";
@@ -37,7 +38,7 @@ class MobileContainer extends Component {
             vertical
             visible={sidebarOpened}
           >
-            <Menu.Item name="home" as={NavLink} exact to="/" active>
+            <Menu.Item name="home" as={NavLink} exact to="/">
               Home
             </Menu.Item>
             <Menu.Item name="workgallary" as={NavLink} to="/workgallary">
@@ -58,7 +59,11 @@ class MobileContainer extends Component {
             <Segment
               inverted
               textAlign="center"
-              style={{ minHeight: 350, padding: "1em 0em" }}
+              style={
+                this.props.showHideHomePageHeading
+                  ? { minHeight: 350, padding: "1em 0em" }
+                  : { padding: "1em 0em" }
+              }
               vertical
             >
               <Container>
@@ -76,7 +81,7 @@ class MobileContainer extends Component {
                     </Menu.Item> */}
                 </Menu>
               </Container>
-              <HomepageHeading mobile />
+              {this.props.showHideHomePageHeading && <HomepageHeading mobile />}
             </Segment>
 
             {children}
@@ -91,4 +96,10 @@ MobileContainer.propTypes = {
   children: PropTypes.node,
 };
 
-export default MobileContainer;
+const mapStateToProps = (state) => {
+  return {
+    showHideHomePageHeading: state.showHideHomePageHeading,
+  };
+};
+
+export default connect(mapStateToProps)(MobileContainer);

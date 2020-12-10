@@ -7,32 +7,29 @@ import {
   List,
   Header,
 } from "semantic-ui-react";
-import axios from 'axios';
-
+import axios from "axios";
 
 const Experiences = () => {
-
   const [experienceData, setExperienceData] = useState([]);
 
   useEffect(() => {
     let expData = JSON.parse(localStorage.getItem("exp")) || [];
-    if(expData.length === 0){
-      axios.get( 'https://cdn.contentful.com/spaces/qgy02z519tkz/environments/master/entries/7bCU0Qw2zVMJ8xpKGGTeEn?access_token=hEDisbPkmS_yFjud0OkToNEpTKLuqgyE3WnBuABcbh4')
-      .then( response => { 
-        setExperienceData(response.data.fields.exp);
-        localStorage.setItem("exp",JSON.stringify(response.data.fields.exp));                   
-      } )
-      .catch( error => {
+    if (expData.length === 0) {
+      axios
+        .get(
+          "https://cdn.contentful.com/spaces/qgy02z519tkz/environments/master/entries/7bCU0Qw2zVMJ8xpKGGTeEn?access_token=hEDisbPkmS_yFjud0OkToNEpTKLuqgyE3WnBuABcbh4"
+        )
+        .then((response) => {
+          setExperienceData(response.data.fields.exp);
+          localStorage.setItem("exp", JSON.stringify(response.data.fields.exp));
+        })
+        .catch((error) => {
           console.log(error);
-      } );
-
-    }else{
+        });
+    } else {
       setExperienceData(expData);
     }
-
-
   }, []);
-
 
   return (
     <Segment style={{ padding: "4em 0em" }} vertical>
@@ -40,7 +37,7 @@ const Experiences = () => {
         <Grid container stackable textAlign="left">
           <Grid.Row>
             <Header as="h1" floated="left">
-            Arbetslivserfarenhet
+              Arbetslivserfarenhet
             </Header>
           </Grid.Row>
           <Grid.Row>

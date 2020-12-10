@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import { Container, Menu, Segment, Visibility } from "semantic-ui-react";
 import { NavLink } from "react-router-dom";
 import { Media } from "../common/MediaForResponsive";
@@ -33,7 +34,11 @@ class DesktopContainer extends Component {
           <Segment
             inverted
             textAlign="center"
-            style={{ minHeight: 450, padding: "1em 0em" }}
+            style={
+              this.props.showHideHomePageHeading
+                ? { minHeight: 450, padding: "1em 0em" }
+                : { padding: "1em 0em" }
+            }
             vertical
           >
             <Menu
@@ -44,7 +49,7 @@ class DesktopContainer extends Component {
               size="large"
             >
               <Container>
-                <Menu.Item name="home" as={NavLink} exact to="/" active>
+                <Menu.Item name="home" as={NavLink} exact to="/">
                   Home
                 </Menu.Item>
                 <Menu.Item name="workgallary" as={NavLink} to="/workgallary">
@@ -59,6 +64,7 @@ class DesktopContainer extends Component {
                 <Menu.Item name="fullstack" as={NavLink} to="/fullstack">
                   Fullstack
                 </Menu.Item>
+
                 {/*                 <Menu.Item position='right'>
                   <Button as='a' inverted={!fixed}>
                     Log in
@@ -69,7 +75,8 @@ class DesktopContainer extends Component {
                 </Menu.Item> */}
               </Container>
             </Menu>
-            <HomepageHeading />
+
+            {this.props.showHideHomePageHeading && <HomepageHeading />}
           </Segment>
         </Visibility>
 
@@ -83,4 +90,10 @@ DesktopContainer.propTypes = {
   children: PropTypes.node,
 };
 
-export default DesktopContainer;
+const mapStateToProps = (state) => {
+  return {
+    showHideHomePageHeading: state.showHideHomePageHeading,
+  };
+};
+
+export default connect(mapStateToProps)(DesktopContainer);

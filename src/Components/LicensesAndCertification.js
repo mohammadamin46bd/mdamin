@@ -1,30 +1,31 @@
 import React, { useState, useEffect } from "react";
 import { Grid, Header, Segment, Container, Item } from "semantic-ui-react";
 
-import axios from 'axios';
+import axios from "axios";
 
 const LicensesAndCertification = () => {
-
-
-  const [licensesAndCertificationData, setLicensesAndCertificationData] = useState([]);
+  const [
+    licensesAndCertificationData,
+    setLicensesAndCertificationData,
+  ] = useState([]);
 
   useEffect(() => {
     let lcData = JSON.parse(localStorage.getItem("lc")) || [];
-    if(lcData.length === 0){
-      axios.get( 'https://cdn.contentful.com/spaces/qgy02z519tkz/environments/master/entries/1AYgjpoMDOUBGvatKXqb5D?access_token=hEDisbPkmS_yFjud0OkToNEpTKLuqgyE3WnBuABcbh4')
-      .then( response => { 
-        setLicensesAndCertificationData(response.data.fields.lc);
-        localStorage.setItem("lc",JSON.stringify(response.data.fields.lc));           
-      } )
-      .catch( error => {
+    if (lcData.length === 0) {
+      axios
+        .get(
+          "https://cdn.contentful.com/spaces/qgy02z519tkz/environments/master/entries/1AYgjpoMDOUBGvatKXqb5D?access_token=hEDisbPkmS_yFjud0OkToNEpTKLuqgyE3WnBuABcbh4"
+        )
+        .then((response) => {
+          setLicensesAndCertificationData(response.data.fields.lc);
+          localStorage.setItem("lc", JSON.stringify(response.data.fields.lc));
+        })
+        .catch((error) => {
           console.log(error);
-      } );
-
-    }else{
+        });
+    } else {
       setLicensesAndCertificationData(lcData);
     }
-
-
   }, []);
 
   return (
@@ -61,8 +62,7 @@ const LicensesAndCertification = () => {
         </Grid>
       </Container>
     </Segment>
-  )
-
+  );
 };
 
 export default LicensesAndCertification;
