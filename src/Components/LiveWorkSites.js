@@ -31,9 +31,9 @@ const LiveWorkSites = () => {
             return (
               <Card fluid key ={'card_'+ index}>
                 <Card.Content>
-                  {Object.keys(lw.url).map(urlKey=>{
+                  {Object.keys(lw.url).map((urlKey,ulidx)=>{
                     
-                      return urlKey === "url"?<iframe title="gronplan" width="100%" height="350px" src={lw.url[urlKey]}></iframe>:<Image src={lw.url[urlKey]}  style={{width:"100%!important", height:"100%!important", objectFit: "contain"}}></Image>;
+                      return urlKey === "url"?<iframe key={"urlKey_"+index+'_'+ ulidx} title="gronplan" width="100%" height="350px" src={lw.url[urlKey]}></iframe>:<Image key={"urlKey_"+index+'_'+ ulidx}  src={lw.url[urlKey]}  style={{width:"100%!important", height:"100%!important", objectFit: "contain"}}></Image>;
                    
                     
                   })}
@@ -42,7 +42,7 @@ const LiveWorkSites = () => {
                     as="a"
                     target="_blank"
                     rel="noreferrer"
-                    href={lw.url}
+                    href={lw.url.hasOwnProperty("url")?lw.url.url:lw.url.img}
                   >
                     {lw.name}
                   </Card.Header>
@@ -55,7 +55,7 @@ const LiveWorkSites = () => {
                     as="a"
                     target="_blank"
                     rel="noreferrer"
-                    href={lw.url}
+                    href={lw.url.hasOwnProperty("url")?lw.url.url:lw.url.img}
                   >
                     {lw.fullscreenText}
                   </Card.Header>

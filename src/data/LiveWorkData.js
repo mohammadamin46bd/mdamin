@@ -43,7 +43,7 @@ export const LiveWorkData = {
         },
       ],
       url: {"url":"https://md-react-2018.web.app/"},
-      fullscreenText: "Öppna grönplan  till ett nytt fönster",
+      fullscreenText: "Öppna kartan  till ett nytt fönster",
     },
     {
       name: "kristiaanstadskartan",
@@ -102,7 +102,7 @@ export const LiveWorkData = {
           },
         ],
         url:{"url":sorabproject},
-        fullscreenText: "",
+        fullscreenText: ""
       }
   ],
 };
