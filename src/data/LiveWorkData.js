@@ -27,7 +27,7 @@ export const LiveWorkData = {
             "Uppdraget gick ut på att skapa en dynamik responsiv webbapplikation för att presentera grönplan, översiktsplan, trafikplan med mera med text, kartor och bild. Projektets resultat blev en användarvänlig Digital Platform till kommunens invånare och politiker.",
         },
       ],
-      url: {"url":"http://kartor.kristianstad.se/op/test/?app=gp"},
+      url: {"url":"https://kartor.kristianstad.se/op/test/?app=gp"},
       fullscreenText: "Öppna grönplan  till ett nytt fönster",
     },
      {
