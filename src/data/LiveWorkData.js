@@ -12,7 +12,18 @@ export const LiveWorkData = {
             "Syftet för detta projekt var att skapa ett knowledgebase-system baserad på SharePoint-Online, React och TypeScript för att söka och filtrera dokument för en konkurransedyktig budprocess.",
         },
       ],
-      url: {"img": CMSImg},
+      url: { img: CMSImg },
+      fullscreenText: "",
+    },
+    {
+      name: "Skapa ett bildgalleri med bilder hämtade från flickr",
+      description: [
+        {
+          p:
+            "Uppdraget går ut på att skapa ett bildgalleri med VanillaJS som hämtar data från Flickrs publika API och visar upp resultatet på en webbsida.",
+        },
+      ],
+      url: { url: "https://mdamin.se/bildgalleri/" },
       fullscreenText: "",
     },
     {
@@ -27,10 +38,10 @@ export const LiveWorkData = {
             "Uppdraget gick ut på att skapa en dynamik responsiv webbapplikation för att presentera grönplan, översiktsplan, trafikplan med mera med text, kartor och bild. Projektets resultat blev en användarvänlig Digital Platform till kommunens invånare och politiker.",
         },
       ],
-      url: {"url":"https://kartor.kristianstad.se/op/test/?app=gp"},
+      url: { url: "https://kartor.kristianstad.se/op/test/?app=gp" },
       fullscreenText: "Öppna grönplan  till ett nytt fönster",
     },
-     {
+    {
       name: "Nya generationen interna webbkarta applikation",
       description: [
         {
@@ -42,7 +53,7 @@ export const LiveWorkData = {
             "Sidan är inte public men jag har lagt sidan ute utan interna data och därför alla funktion fungerar inte",
         },
       ],
-      url: {"url":"https://md-react-2018.web.app/"},
+      url: { url: "https://md-react-2018.web.app/" },
       fullscreenText: "Öppna kartan  till ett nytt fönster",
     },
     {
@@ -57,7 +68,7 @@ export const LiveWorkData = {
             "Syftet för detta projekt var att skapa ett nya responsiv webbkarta applikation för kommunen invånare och företagare",
         },
       ],
-      url: {"url":"https://kartor.kristianstad.se/kristianstadskartan/"},
+      url: { url: "https://kartor.kristianstad.se/kristianstadskartan/" },
       fullscreenText: "Öppna kartan till ett nytt fönster",
     },
     {
@@ -68,7 +79,10 @@ export const LiveWorkData = {
             "Syftet för detta projekt var att rapportera inspektion resultat och underhålls- och reparationsservice resultat, av lekplatsredskap från fältet digitalt med hjälp av mobil eller tab. Två mobile responsiv webb-applikationer har utvecklat för att nå målet. En för att rapportera inspektion resultat och en för att rapportera reparationsservice resultat.",
         },
       ],
-      url:{"url":"https://kartor.kristianstad.se/park/?zoom=9&center=14.18015,56.03182&ol=v_lekplatsredskap,plats&bl=turistkarta"},
+      url: {
+        url:
+          "https://kartor.kristianstad.se/park/?zoom=9&center=14.18015,56.03182&ol=v_lekplatsredskap,plats&bl=turistkarta",
+      },
       fullscreenText: "Öppna applikationen till ett nytt fönster",
     },
     {
@@ -79,7 +93,7 @@ export const LiveWorkData = {
             "Syftet för detta projekt var att skapa en platsbaserad webbapplikation för medborgarna att kunna lämna synpunkter på planförslag för att stadsutvecklingen ska bli så bra som möjligt.",
         },
       ],
-      url: {"url":"https://kartor.kristianstad.se/fopkarta2/"},
+      url: { url: "https://kartor.kristianstad.se/fopkarta2/" },
       fullscreenText: "Öppna Synpunktskartan  till ett nytt fönster",
     },
     {
@@ -90,20 +104,19 @@ export const LiveWorkData = {
             "Syftet för detta projekt var att utveckla en ny mobile anpassat webbapplikation från grunden för att presentera VA ledningsnätinformation och annan plats baserad information för Östersund kommun. I den här applikationen kunden har använt annan plats baserad data",
         },
       ],
-      url:{"img":ostersund_mobile_viewer},
+      url: { img: ostersund_mobile_viewer },
       fullscreenText: "",
     },
     {
-        name: "Sörab ledningsnät viewer från AWS",
-        description: [
-          {
-            p:
-              "Syftet för detta projekt var att utveckla och vidare utveckla GSViewer webbapplikationen för att presentera Sörab ledningsnätinformation och göra CRUD (Skapa, läsa, uppdatera och ta bort information) operation från där och drifta applikationen från AWS miljön.",
-          },
-        ],
-        url:{"url":sorabproject},
-        fullscreenText: ""
-      }
+      name: "Sörab ledningsnät viewer från AWS",
+      description: [
+        {
+          p:
+            "Syftet för detta projekt var att utveckla och vidare utveckla GSViewer webbapplikationen för att presentera Sörab ledningsnätinformation och göra CRUD (Skapa, läsa, uppdatera och ta bort information) operation från där och drifta applikationen från AWS miljön.",
+        },
+      ],
+      url: { url: sorabproject },
+      fullscreenText: "",
+    },
   ],
 };
-
