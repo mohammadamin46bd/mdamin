@@ -24,7 +24,7 @@ export const LiveWorkData = {
         },
       ],
       url: { url: "https://mdamin.se/bildgalleri/" },
-      fullscreenText: "",
+      fullscreenText: "Öppna applikationen  till ett nytt fönster",
     },
     {
       name: "Grönplan",

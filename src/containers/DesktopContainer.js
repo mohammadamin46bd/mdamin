@@ -50,10 +50,10 @@ class DesktopContainer extends Component {
             >
               <Container>
                 <Menu.Item name="home" as={NavLink} exact to="/">
-                  Home
+                  Hem
                 </Menu.Item>
                 <Menu.Item name="workgallary" as={NavLink} to="/workgallary">
-                  Work gallery
+                 Projektgalleri
                 </Menu.Item>
                 <Menu.Item name="frontend" as={NavLink} to="/frontend">
                   Frontend
