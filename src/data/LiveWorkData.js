@@ -87,7 +87,7 @@ export const LiveWorkData = {
       description: [
         {
           p:
-            "Detta var en kort projekt. Syftet för detta projekt var att utveckla en ny mobile anpassat webbapplikation från grunden för att presentera VA ledningsnätinformation och annan plats baserad information för Östersund kommun. I den här applikationen kunden har använt annan plats baserad data",
+            "Syftet för detta projekt var att utveckla en ny mobile anpassat webbapplikation från grunden för att presentera VA ledningsnätinformation och annan plats baserad information för Östersund kommun. I den här applikationen kunden har använt annan plats baserad data",
         },
       ],
       url:{"img":ostersund_mobile_viewer},
