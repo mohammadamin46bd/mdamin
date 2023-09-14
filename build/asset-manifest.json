@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/amin/static/css/main.a617e044.chunk.css",
+    "main.js": "/amin/static/js/main.244c0422.chunk.js",
+    "main.js.map": "/amin/static/js/main.244c0422.chunk.js.map",
+    "runtime-main.js": "/amin/static/js/runtime-main.09a1c4c8.js",
+    "runtime-main.js.map": "/amin/static/js/runtime-main.09a1c4c8.js.map",
+    "static/css/2.cecbf1e6.chunk.css": "/amin/static/css/2.cecbf1e6.chunk.css",
+    "static/js/2.99c76af5.chunk.js": "/amin/static/js/2.99c76af5.chunk.js",
+    "static/js/2.99c76af5.chunk.js.map": "/amin/static/js/2.99c76af5.chunk.js.map",
+    "static/js/3.7bebdc3a.chunk.js": "/amin/static/js/3.7bebdc3a.chunk.js",
+    "static/js/3.7bebdc3a.chunk.js.map": "/amin/static/js/3.7bebdc3a.chunk.js.map",
+    "index.html": "/amin/index.html",
+    "static/css/2.cecbf1e6.chunk.css.map": "/amin/static/css/2.cecbf1e6.chunk.css.map",
+    "static/css/main.a617e044.chunk.css.map": "/amin/static/css/main.a617e044.chunk.css.map",
+    "static/js/2.99c76af5.chunk.js.LICENSE.txt": "/amin/static/js/2.99c76af5.chunk.js.LICENSE.txt",
+    "static/media/CMS.443afdf1.jpg": "/amin/static/media/CMS.443afdf1.jpg",
+    "static/media/semantic.min.css": "/amin/static/media/outline-icons.ddae9b1b.woff",
+    "static/media/mdamin.868286ee.png": "/amin/static/media/mdamin.868286ee.png",
+    "static/media/ostersund_mobile_viewer.a33a8aa6.PNG": "/amin/static/media/ostersund_mobile_viewer.a33a8aa6.PNG",
+    "static/media/sorabproject.619d8a60.pdf": "/amin/static/media/sorabproject.619d8a60.pdf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.09a1c4c8.js",
+    "static/css/2.cecbf1e6.chunk.css",
+    "static/js/2.99c76af5.chunk.js",
+    "static/css/main.a617e044.chunk.css",
+    "static/js/main.244c0422.chunk.js"
+  ]
+}
