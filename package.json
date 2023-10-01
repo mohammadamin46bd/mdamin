@@ -2,7 +2,7 @@
   "name": "homepage",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mohammadamin46bd.github.io/amin/",
+  "homepage": "https://mohammadamin46bd.github.io/mdamin/",
   "dependencies": {
     "@artsy/fresnel": "^1.2.2",
     "@testing-library/jest-dom": "^5.11.4",
