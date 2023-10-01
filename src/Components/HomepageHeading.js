@@ -18,13 +18,13 @@ const homepageHeading = ({ mobile }) => (
       <Card.Content>
       <Image floated="left" size="small" src={mdamin} style={{borderRadius:"100px"}} />
         <Card.Header style={{ color: "white" }}>Mohammad Amin</Card.Header>
-        <Card.Meta style={{ color: "white" }}>Fullstack utvecklare, Sopra Steria</Card.Meta>
+        <Card.Meta style={{ color: "white" }}>Systemutvecklare, Statens institutionsstyrelse: SiS</Card.Meta>
         <Card.Meta style={{ color: "white" }}>Utbildning: Masterexamen, Kungliga Tekniska högskolan (KTH), 2011</Card.Meta>
         <Card.Meta style={{ color: "white" }}>Kvalifikationer: JavaScript, React, Node, C# .Net, PHP, GIS</Card.Meta>      
         <Card.Description style={{ color: "white" }}>
-          Jag är en driven och motiverad frontend fokuserad fullstackutvecklare
-          med en examen i geodesi och geoinformatik från KTH. Jag har över 11
-          års erfarenhet inom geoinformatik, fotogrammetriska och GIS. Som
+          Jag är en driven och motiverad frontend fokuserad Systemutvecklare
+          med en examen i geodesi och geoinformatik från KTH. Jag har över 13
+          års erfarenhet som Systemutvecklare inom geoinformatik, GIS, Stadsbyggnadsförvaltning, telekom, tvångsvård och sluten ungdomsvård område. Som
           utvecklare har min primära fokus legat på JavaScript med ramverken
           React och Node. Jag är en engagerad och driven professionell med stor
           passion för att skapa smarta digitala lösningar.

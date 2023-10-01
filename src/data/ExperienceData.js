@@ -3,7 +3,7 @@ export const experienceData = {
     {
       title: "Fullstackutvecklare",
       employment_type: "Full time",
-      company: "Sopra Steria",
+      company: "Statens institutionsstyrelse: SiS",
       location: "Stockholm",
       IsCurrently_working: true,
       start_date: "Aug 2020",
