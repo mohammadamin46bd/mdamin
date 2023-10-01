@@ -25,7 +25,7 @@ class BackendWork extends Component {
           }}
         />
 
-        <p>Some previous backend work experience will be added here.</p>
+        <p>Some previous backend work experience will be added here .</p>
 
         <HomepageFooter />
       </ResponsiveContainer>
